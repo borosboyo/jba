@@ -26,7 +26,6 @@ module.exports = function (app) {
         renderMW(objRepo, 'western'));
 
 
-
     app.use('/east/new',
         saveTeamMW(objRepo),
         renderMW(objRepo, 'newEastern'));
@@ -63,10 +62,10 @@ module.exports = function (app) {
 
     app.use('/:teamid/del',
         delPlayerMW(objRepo),
-        renderMW(objRepo, ':teamid'));
+        renderMW(objRepo, 'teamPanel'));
 
     app.use('/:teamid',
         getPlayersMW(objRepo),
-        renderMW(objRepo, ':teamid'));
+        renderMW(objRepo, 'teamPanel'));
 
 }
