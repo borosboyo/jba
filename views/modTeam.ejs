@@ -1,5 +1,3 @@
-<!doctype html>
-<html lang="en">
 <head>
     <meta charset="utf-8">
     <title>JBA</title>
@@ -36,36 +34,33 @@
 <main>
     <div class="px-4 py-5 my-5 text-center" >
         <h1><b>Modify Team</b></h1>
-        <h2 style="font-size: 20px;"><b>:teamid</b></h2>
+        <h2 style="font-size: 20px;"><b>team.name</b>
+        </h2>
 
-        <form>
+        <form method ="POST">
             <div class="form-group" style = "padding: 10px;">
                 <label for="name">Name:</label>
-                <input type="text" class="forms-control" id="name">
+                <input type="text" class="forms-control" id="name" name="name"
+                       value="<%= team.name %>">
             </div>
-
             <div class="form-group" style = "padding: 10px;">
                 <label for="wins">Wins: </label>
-                <input type="text" class="forms-control" id="wins">
+                <input type="text" class="forms-control" id="wins" name="wins"
+                       value="<%= team.wins %>">
             </div>
-
+            <div class="form-group" style = "padding: 10px;">
+                <label for="wins">Losses: </label>
+                <input type="text" class="forms-control" id="losses" name="losses"
+                       value="<%= team.losses %>">
+            </div>
             <div class="form-group" style = "padding: 10px;">
                 <label for="hc">Coach:</label>
-                <input type="text" class="forms-control" id="hc">
+                <input type="text" class="forms-control" id="hc" name="hc"
+                       value="<%= team.hc %>">
             </div>
+            <input type="submit" class="btn btn-primary" href="/west" value="Save"/>
+            <a class="btn btn-link" href="/west">Cancel</a>
         </form>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center" style = "padding: 50px;" >
-            <a href="western.html">
-                <button type="button" class="btn btn-primary btn-lg px-4">Save</button>
-            </a>
-            <a href="western.html">
-                <button type="button" class="btn btn-primary btn-lg px-4">Cancel</button>
-            </a>
-        </div>
     </div>
 </main>
-
-
-
 </body>
-</html>

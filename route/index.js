@@ -14,19 +14,18 @@ const saveTeamMW = require('../middleware/team/saveTeamMW')
 module.exports = function (app) {
     const objRepo = {};
 
-    app.use('/',
+    app.get('/',
         renderMW(objRepo, 'index'));
 
-    app.use('/east',
+    app.get('/east',
         getTeamsMW(objRepo),
         renderMW(objRepo, 'eastern'));
 
-    app.use('/west',
+    app.get('/west',
         getTeamsMW(objRepo),
         renderMW(objRepo, 'western'));
 
-
-    app.use('/east/new',
+    app.get('/east/new',
         saveTeamMW(objRepo),
         renderMW(objRepo, 'newEastern'));
 
@@ -50,8 +49,6 @@ module.exports = function (app) {
         delTeamMW(objRepo),
         renderMW(objRepo, 'western'));
 
-
-
     app.use('/:teamid/new',
         savePlayerMW(objRepo),
         renderMW(objRepo, 'newPlayer'));
@@ -62,10 +59,10 @@ module.exports = function (app) {
 
     app.use('/:teamid/del',
         delPlayerMW(objRepo),
-        renderMW(objRepo, 'teamPanel'));
+        renderMW(objRepo, ':teamid'));
 
     app.use('/:teamid',
         getPlayersMW(objRepo),
-        renderMW(objRepo, 'teamPanel'));
+        renderMW(objRepo, ':teamid'));
 
 }
