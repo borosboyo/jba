@@ -34,7 +34,7 @@
 <main>
     <div class="px-4 py-5 my-5 text-center" >
         <h1><b>Modify Player</b></h1>
-        <h2 style="font-size: 20px;"><b>team.name</b></h2>
+        <h2 style="font-size: 20px;"><b>Team: <%= team.name %></b></h2>
 
         <form method="POST">
             <div class="form-group" style = "padding: 10px;">
@@ -53,22 +53,26 @@
 
             <div class="form-group" style = "padding: 10px;">
                 <label for="ppg">PPG:</label>
-                <input type="text" class="forms-control" id="ppg">
+                <input type="text" class="forms-control" id="ppg"
+                       value="<%= player.ppg %>">
             </div>
 
             <div class="form-group" style = "padding: 10px;">
                 <label for="trb">TRB:</label>
-                <input type="text" class="forms-control" id="trb">
+                <input type="text" class="forms-control" id="trb"
+                       value="<%= player.trb %>">
             </div>
 
             <div class="form-group" style = "padding: 10px;">
                 <label for="ast">AST:</label>
-                <input type="text" class="forms-control" id="ast">
+                <input type="text" class="forms-control" id="ast"
+                       value="<%= player.ast %>">
             </div>
 
             <div class="form-group" style = "padding: 10px;">
                 <label for="mpg">MPG: </label>
-                <input type="text" class="forms-control" id="mpg">
+                <input type="text" class="forms-control" id="mpg"
+                       value="<%= player.mpg %>">
             </div>
             <input type="submit" class="btn btn-primary" href="/east" value="Save"/>
             <a class="btn btn-link" href="/east">Cancel</a>

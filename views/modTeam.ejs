@@ -34,7 +34,7 @@
 <main>
     <div class="px-4 py-5 my-5 text-center" >
         <h1><b>Modify Team</b></h1>
-        <h2 style="font-size: 20px;"><b>team.name</b>
+        <h2 style="font-size: 20px;"><b>Team: <%= team.name %></b>
         </h2>
 
         <form method ="POST">
@@ -56,7 +56,7 @@
             <div class="form-group" style = "padding: 10px;">
                 <label for="hc">Coach:</label>
                 <input type="text" class="forms-control" id="hc" name="hc"
-                       value="<%= team.hc %>">
+                       value="<%= team.headCoach() %>">
             </div>
             <input type="submit" class="btn btn-primary" href="/west" value="Save"/>
             <a class="btn btn-link" href="/west">Cancel</a>
