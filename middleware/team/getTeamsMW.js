@@ -3,8 +3,16 @@
  */
 const requireOption = require('../requireOption');
 
-module.exports = function (objectrepository) {
+module.exports = function (objectrepository, conf) {
+    const TeamModel = requireOption(objectrepository, 'TeamModel');
     return function (req, res, next) {
-        next();
+        TeamModel.find({conference: conf}, (err, teams) => {
+            if(err) {
+                return next(err);
+            }
+
+            res.locals.teams = teams;
+            return next();
+        });
     };
 };

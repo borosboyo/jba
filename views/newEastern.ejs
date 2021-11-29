@@ -39,25 +39,32 @@
         <form method="POST">
             <div class="form-group" style = "padding: 10px;">
                 <label for="name">Name:</label>
-                <input type="text" class="forms-control" id="name">
+                <input type="text" class="forms-control" id="name" name="name"
+                       value="<%= (typeof team === 'undefined') ? '' : team.name %>">
             </div>
 
             <div class="form-group" style = "padding: 10px;">
                 <label for="wins">Wins: </label>
-                <input type="text" class="forms-control" id="wins">
+                <input type="text" class="forms-control" id="wins" name="wins"
+                       value="<%= (typeof team === 'undefined') ? '' : team.wins %>">
             </div>
 
             <div class="form-group" style = "padding: 10px;">
                 <label for="losses">Losses:</label>
-                <input type="text" class="forms-control" id="losses">
+                <input type="text" class="forms-control" id="losses" name="losses"
+                       value="<%= (typeof team === 'undefined') ? '' : team.losses %>">
             </div>
 
             <div class="form-group" style = "padding: 10px;">
                 <label for="hc">Coach:</label>
-                <input type="text" class="forms-control" id="hc">
+                <input type="text" class="forms-control" id="hc" name="headCoach"
+                       value="<%= (typeof team === 'undefined') ? '' : team.headCoach %>">
             </div>
-            <input type="submit" class="btn btn-primary" href="/east" value="Save"/>
-            <a class="btn btn-link" href="/east">Cancel</a>
+
+            
+
+            <input type="submit" class="btn btn-primary" value="Save"/>
+            <a class="btn btn-primary" href="/east">Cancel</a>
         </form>
 
     </div>

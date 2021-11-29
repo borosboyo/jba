@@ -25,25 +25,17 @@
         }
         a {display: inline-block}
     </style>
-
-    <!-- Custom styles for this template -->
-    <link href="grid.css" rel="stylesheet">
 </head>
 <body class="py-4">
 
 <main>
     <div class="px-4 py-5 my-5 text-center">
-        <h1><b>Team: <%= team.nev %></b></h1>
+        <h1><b>Team: <%= team.name %></b></h1>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center" style = "padding: 50px;" >
-            <a href="newPlayer.html">
+            <a href="/players/<%= team._id %>/new">
                 <button type="button" class="btn btn-primary btn-lg px-4 gap-3">New Player</button>
             </a>
-            <a href="modPlayer.html">
-                <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Modify Player</button>
-            </a>
-            <a href="index.html">
-                <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Back</button>
-            </a>
+            <a href="/<%= team.conference %>" class="btn btn-primary btn-lg px-4 gap-3">Back</a>
         </div>
 
         <div class ="container">
@@ -93,9 +85,10 @@
                             <%= onePlayer.mpg %>
                         </th>
                         <th>
-                            <a href="/:teamid/del">
-                                <button type="button" class="btn btn-danger btn-sml"><i class ="far fa-trash-alt"></i></button>
-                            </a>
+                            <a href="/players/<%= team._id %>/edit/<%= onePlayer._id %>" class="btn btn-sm btn-primary"><i
+                                        class="far fa-edit"></i></a>
+                            <a href="/players/<%= team._id %>/del/<%= onePlayer._id %>" class="btn btn-sm btn-danger"><i
+                                        class="far fa-trash-alt"></i></a>
                         </th>
                     </tr>
                     <% }); %>

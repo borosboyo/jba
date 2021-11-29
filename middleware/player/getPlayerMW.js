@@ -5,7 +5,29 @@
 const requireOption = require('../requireOption');
 
 module.exports = function (objectrepository) {
-    return function (req, res, next) {
-        next();
+    const PlayerModel = requireOption(objectrepository, 'PlayerModel');
+    return function(req, res, next) {
+        PlayerModel.findOne(
+            {
+                _id: req.params.playerid
+            },
+            (err, player) => {
+                if (err || !player) {
+                    return next(err);
+                }
+
+                res.locals.player = player;
+
+                console.log(res.locals.player.name)
+                console.log(res.locals.player.position)
+                console.log(res.locals.player.ppg)
+                console.log(res.locals.player.trb)
+                console.log(res.locals.player.ast)
+                console.log(res.locals.player.mpg)
+                console.log(res.locals.player._team)
+
+                return next();
+            }
+        );
     };
 };
