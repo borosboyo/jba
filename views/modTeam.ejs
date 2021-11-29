@@ -25,9 +25,6 @@
         }
         a {display: inline-block}
     </style>
-
-    <!-- Custom styles for this template -->
-    <link href="grid.css" rel="stylesheet">
 </head>
 <body class="py-4">
 
@@ -55,11 +52,11 @@
             </div>
             <div class="form-group" style = "padding: 10px;">
                 <label for="hc">Coach:</label>
-                <input type="text" class="forms-control" id="hc" name="hc"
-                       value="<%= team.headCoach() %>">
+                <input type="text" class="forms-control" id="hc" name="headCoach"
+                       value="<%= team.headCoach %>">
             </div>
-            <input type="submit" class="btn btn-primary" href="/west" value="Save"/>
-            <a class="btn btn-link" href="/west">Cancel</a>
+            <input type="submit" class="btn btn-primary" value="Save"/>
+            <a class="btn btn-primary" href="/<%= team.conference %>">Cancel</a>
         </form>
     </div>
 </main>

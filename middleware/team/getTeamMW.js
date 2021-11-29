@@ -5,7 +5,16 @@
 const requireOption = require('../requireOption');
 
 module.exports = function (objectrepository) {
-    return function (req, res, next) {
-        next();
+    const TeamModel = requireOption(objectrepository, 'TeamModel');
+
+    return function(req, res, next) {
+        TeamModel.findOne({ _id: req.params.teamid }, (err, team) => {
+            if (err || !team) {
+                return next(err);
+            }
+
+            res.locals.team = team;
+            return next();
+        });
     };
 };

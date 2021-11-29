@@ -1,5 +1,5 @@
 const Schema = require('mongoose').Schema
-const db = require('../config/db')
+const db = require('../middleware/config/db')
 
 const Player = db.model('Player', {
     name: String,

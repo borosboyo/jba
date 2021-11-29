@@ -5,8 +5,17 @@
  */
 const requireOption = require('../requireOption');
 
-module.exports = function (objectrepository) {
+module.exports = function (objectrepository, conf) {
     return function (req, res, next) {
-        next();
+        if(typeof res.locals.team === 'undefined'){
+            return next();
+        }
+        res.locals.team.remove(err => {
+            if(err){
+                return next(err);
+            }
+
+            return res.redirect(conf);
+        });
     };
 };

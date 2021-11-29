@@ -66,7 +66,7 @@
                     <% teams.forEach(function(oneTeam){ %>
                     <tr>
                         <th>
-                            <%= oneTeam.name %>
+                             <%= oneTeam.name %>
                         </th>
                         <th>
                             <%= oneTeam.wins %>
@@ -78,11 +78,11 @@
                             <%= oneTeam.headCoach %>
                         </th>
                         <th>
-                            <a href="/east/edit/:teamid">
-                                <button type="button" class="btn btn-primary btn-sml"><i class ="far fa-edit"></i></button>
-                            </a>
-                            <a href="/east/del/:teamid">
-                                <button type="button" class="btn btn-danger btn-sml"><i class ="far fa-trash-alt"></i></button>
+                            <a href="/players/<%= oneTeam._id %>" class="btn btn-sm btn-success">Players</a>
+                            <a href="/east/edit/<%= oneTeam._id %>" class="btn btn-sm btn-primary"><i
+                                        class="far fa-edit"></i></a>
+                            <a href="/east/del/<%= oneTeam._id %>" class="btn btn-sm btn-danger"><i
+                                        class="far fa-trash-alt"></i></a>
                             </a>
                         </th>
                     </tr>

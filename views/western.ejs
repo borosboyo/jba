@@ -75,13 +75,14 @@
                                 <%= oneTeam.losses %>
                             </th>
                             <th>
-                                <%= oneTeam.headCoach() %>
+                                <%= oneTeam.headCoach %>
                             </th>
                             <th>
-                                <a href="/west/edit/:teamid">
+                                <a href="/players/<%= oneTeam._id %>" class="btn btn-sm btn-success">Players</a>
+                                <a href="/west/edit/<%= oneTeam._id %>">
                                     <button type="button" class="btn btn-primary btn-sml"><i class ="far fa-edit"></i></button>
                                 </a>
-                                <a href="/west/del/:teamid">
+                                <a href="/west/del/<%= oneTeam._id %>">
                                     <button type="button" class="btn btn-danger btn-sml"><i class ="far fa-trash-alt"></i></button>
                                 </a>
                             </th>
